@@ -1,8 +1,10 @@
 import React from "react";
-// Import Header Component
+// Import Nav Component
 import Header from './components/Header.js'
 // Import Hero Component
 import Hero from './components/Hero'
+// Import Order Form Component
+import Form from './components/Form'
 import './App.css'
 
 const App = () => {
@@ -10,6 +12,7 @@ const App = () => {
     <>
       <Header />
       <Hero />
+      <Form />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import '../App.css'
 
-export default function Header() {
+export default function Topbar() {
   return (
     <header>
       <a href='/' id='logo'>Lambda Eats</a>
