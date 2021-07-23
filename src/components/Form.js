@@ -3,7 +3,26 @@ import React from "react";
 import Header from './Header.js'
 import '../App.css'
 
-export default function Form() {
+export default function Form(props) {
+  const {
+    values,
+    submit,
+    change,
+    disabled,
+    errors,
+  } = props
+
+  const onSubmit = evt => {
+    evt.preventDefault()
+    submit()
+  }
+
+  const onChange = evt => {
+    const { name, value, type, checked } = evt.target
+    const valueToUse = type === 'checkbox' ? checked : value
+    change(name, valueToUse)
+  }
+
   return (
     <>
     <Header />
@@ -11,7 +30,10 @@ export default function Form() {
         <div class='container'>
           <h1>Build Your Own Pizza</h1>
           <div className='featured-image'></div>
-          <form id='pizza-form'>
+          <form id='pizza-form' onSubmit={onSubmit}>
+            <div className='errors'>
+              <div>{errors.name}</div>
+            </div>
             <fieldset>
               <legend>Choice of Size</legend>
               <label>
@@ -60,8 +82,8 @@ export default function Form() {
               <label>
                 <input 
                   type='text'
-                  id='special-input'
-                  name='special-input'
+                  id='special-text'
+                  name='special-text'
                 />
               </label>
             </fieldset>
@@ -69,12 +91,15 @@ export default function Form() {
               <legend>Contact Information</legend>
               <label>Full Name<br/>
                 <input 
+                  value={values.name}
+                  onChange={onChange}
                   id='name-input'
                   name='name'
                 />
               </label>
             </fieldset>
             <input 
+              disabled={disabled}
               type='submit'
               value='Add to Order'
             />

@@ -85,3 +85,9 @@ h1 {
   display: block;
   margin: 35px auto 0px auto;
 }
+
+/* --- Errors --- */
+.errors {
+  color: #EE3A43;
+  font-weight: 700;
+}

@@ -3,13 +3,13 @@
 // Set up variables
 const sizeInput = () => cy.get('select[id="size-dropdown"]')
 const nameInput = () => cy.get('input[id="name-input"]')
-const specialInput = () => cy.get('input[id="special-input"]')
+const specialInput = () => cy.get('input[id="special-text"]')
 const toppingsInput = () => cy.get('input[type=checkbox]')
 const submitBtn = () => cy.get('button[id="submit-btn"]')
 
 describe('Cypress MVP Tests', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3000/pizza')
   })
   
   // // Testing setup
