@@ -43,7 +43,7 @@ h1 {
   color: #fff;
 }
 #hero button,
-#pizza-form input[type=submit] {
+#pizza-form button {
   font-size: 20px;
   padding: 15px 30px;
   border-radius: 10px;
@@ -85,9 +85,16 @@ h1 {
   margin-bottom: 10px;
   padding-top: 25px;
 }
-#pizza-form input[type=submit] {
+#pizza-form button {
   display: block;
   margin: 35px auto 0px auto;
+}
+#pizza-form button:disabled,
+#pizza-form button[disabled] {
+  background: #ccc;
+  cursor: not-allowed;
+  pointer-events: all;
+  border: 1px solid #ccc;
 }
 
 /* --- Errors --- */

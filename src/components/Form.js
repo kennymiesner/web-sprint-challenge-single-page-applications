@@ -34,10 +34,10 @@ export default function Form(props) {
             <legend>Choice of Size</legend>
             <label>
               <select
-                id='size-dropdown'
-                name='size'
-                value={values.size}
                 onChange={onChange}
+                value={values.size}
+                name='size'
+                id='size-dropdown'
               >
                 <option value=''>--Select Size--</option>
                 <option value='small'>Small (9")</option>
@@ -51,34 +51,34 @@ export default function Form(props) {
             <legend>Add Toppings</legend>
             <input 
               type='checkbox'
-              id='pepperoni'
-              name='pepperoni'
-              value={values.pepperoni}
               onChange={onChange}
+              value={values.pepperoni}
+              name='pepperoni'
+              id='pepperoni'
             />
             <label htmlFor='pepperoni'>Pepperoni</label><br/>
             <input 
               type='checkbox'
-              id='sausage'
-              name='sausage'
-              value={values.sausage}
               onChange={onChange}
+              value={values.sausage}
+              name='sausage'
+              id='sausage'
             />
             <label htmlFor='sausage'>Sausage</label><br/>
             <input 
               type='checkbox'
-              id='bacon'
-              name='bacon'
-              value={values.bacon}
               onChange={onChange}
+              value={values.bacon}
+              name='bacon'
+              id='bacon'
             />
             <label htmlFor='bacon'>Bacon</label><br/>
             <input 
               type='checkbox'
-              id='onion'
-              name='onion'
-              value={values.onion}
               onChange={onChange}
+              value={values.onion}
+              name='onion'
+              id='onion'
             />
             <label htmlFor='onion'>Onion</label><br/>
           </fieldset>
@@ -86,11 +86,11 @@ export default function Form(props) {
             <legend>Special Instructions</legend>
             <label>
               <input 
+                onChange={onChange}
+                value={values.special}
+                name='special'
                 type='text'
                 id='special-text'
-                name='special'
-                value={values.special}
-                onChange={onChange}
               />
             </label>
           </fieldset>
@@ -98,20 +98,15 @@ export default function Form(props) {
             <legend>Contact Information</legend>
             <label>Full Name<br/>
               <input 
-                type='text'
-                value={values.name}
                 onChange={onChange}
-                id='name-input'
+                value={values.name}
                 name='name'
+                type='text'
+                id='name-input'
               />
             </label>
           </fieldset>
-          <input 
-            disabled={disabled}
-            type='submit'
-            id='order-button'
-            value='Submit Order'
-          />
+          <button id='submitBtn' disabled={disabled}>Place Order</button>
         </form>
       </div>
     </section>
