@@ -1,4 +1,9 @@
 // Cypress MVP Tests
+//
+// Set up variables
+const specialInput = () => cy.get('input[id="name-input"]')
+const toppingsInput = () => cy.get('input[id="name-input"]')
+const submitBtn = () => cy.get('button[id="submit-btn"]')
 
 describe('Cypress MVP Tests', {
 
