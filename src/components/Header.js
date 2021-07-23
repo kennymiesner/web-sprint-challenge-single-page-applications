@@ -6,13 +6,13 @@ export default function Topbar() {
   return (
     <header>
       <Link to={'/'}>  
-        <a id='logo'>Lambda Eats</a>
+        <button id='logo'>Lambda Eats</button>
       </Link>
       <nav>
         <Link to={'/pizza'}>
-          <a id='order-pizza'>Order Online &#127829;</a>
+          <button id='order-pizza'>Order Online &#127829;</button>
         </Link>
-        <a href='#'>Contact</a>
+        <button>Contact</button>
       </nav>
     </header>
   )

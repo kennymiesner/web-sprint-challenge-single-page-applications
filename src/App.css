@@ -7,10 +7,13 @@ header {
   padding: 35px 50px;
   border-bottom: 1px solid #ddd;
 }
-header a {
+header button {
   font-size: 20px;
   text-decoration: none;
   color: initial;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 header a:not(:last-child) {
   margin-right: 30px;
@@ -47,6 +50,7 @@ h1 {
   border: 1px solid #EE3A43;
   background: #EE3A43;
   color: #fff;
+  cursor: pointer;
 }
 
 /* --- Order Form Component --- */

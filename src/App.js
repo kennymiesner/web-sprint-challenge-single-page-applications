@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 // Import Route and Switch
 import { Route, Switch } from 'react-router-dom'
+// Import Header Component
+import Header from './components/Header.js'
 // Import Hero Component
 import Hero from './components/Hero'
 // Import Order Form Component
@@ -19,6 +21,12 @@ import './App.css'
 
 const initialFormValues = {
   name: '',
+  special: '',
+  size: '',
+  pepperoni: false,
+  sausage: false,
+  bacon: false,
+  onion: false,
 }
 
 const initialFormErrors = {
@@ -72,9 +80,7 @@ export default function App () {
   const formSubmit = () => {
     const newOrder = {
       name: formValues.name.trim(),
-      // email: formValues.email.trim(),
-      // password: formValues.password.trim(),
-      // terms: ['Accepted'],
+      special: formValues.special.trim(),
     }
     postNewOrder(newOrder)
   }
@@ -86,27 +92,30 @@ export default function App () {
   }, [formValues])
 
   return (
-    <Switch>
-      <Route path='/pizza'>
-        <Form 
-          values={formValues}
-          change={inputChange}
-          submit={formSubmit}
-          disabled={disabled}
-          errors={formErrors}
-        />
+    <>
+      <Header />
+      <Switch>
+        <Route path='/pizza'>
+          <Form 
+            values={formValues}
+            change={inputChange}
+            submit={formSubmit}
+            disabled={disabled}
+            errors={formErrors}
+          />
 
-        {
-          orders.map(order => {
-            return (
-              <NewOrder key={order.id} details={order} />
-            )
-          })
-        }        
-      </Route>
-      <Route path='/'>
-        <Hero />
-      </Route>
-    </Switch>
+          {
+            orders.map(order => {
+              return (
+                <NewOrder key={order.id} details={order} />
+              )
+            })
+          }        
+        </Route>
+        <Route path='/'>
+          <Hero />
+        </Route>
+      </Switch>
+    </>
   );
 };

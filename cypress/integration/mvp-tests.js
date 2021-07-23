@@ -5,7 +5,7 @@ const sizeInput = () => cy.get('select[id="size-dropdown"]')
 const nameInput = () => cy.get('input[id="name-input"]')
 const specialInput = () => cy.get('input[id="special-text"]')
 const toppingsInput = () => cy.get('input[type=checkbox]')
-const submitBtn = () => cy.get('button[id="submit-btn"]')
+const submitBtn = () => cy.get('input[id="order-button"]')
 
 describe('Cypress MVP Tests', () => {
   beforeEach(() => {
@@ -56,14 +56,14 @@ describe('Cypress MVP Tests', () => {
       .should('have.value', 'Please cook for extra time. Thanks!') 
 
     // Submit form
-    // submitBtn()
-    //   .click()
+    submitBtn()
+      .click()
 
     // Test form reset
-    sizeInput().should('have.value', '')
-    toppingsInput().should('have.value', '')
-    nameInput().should('have.value', '')
-    specialInput().should('have.value', '')
+    // sizeInput().should('have.value', '')
+    // toppingsInput().should('have.value', '')
+    // nameInput().should('have.value', '')
+    // specialInput().should('have.value', '')
   })
   
 })

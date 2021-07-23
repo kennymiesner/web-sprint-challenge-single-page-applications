@@ -6,11 +6,14 @@ export default function NewOrder({ details }) {
   }
 
   return (
-    <div className='user container'>
-      <h2>{details.name}</h2>
-      <p>Email: {details.email}</p>
-      <p>Password: {details.password}</p>
-      <p>Terms of Service: {details.terms}</p>
+    <div className='order container'>
+      <h2>Name: {details.name}</h2>
+      <p>Size: {details.size}</p>
+      <p>Topping1: {details.topping1}</p>
+      <p>Topping2: {details.topping2}</p>
+      <p>Topping3: {details.topping3}</p>
+      <p>Topping4: {details.topping4}</p>
+      <p>Special: {details.special}</p>
     </div>
   )
 }
