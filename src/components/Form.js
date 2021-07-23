@@ -106,7 +106,7 @@ export default function Form(props) {
               />
             </label>
           </fieldset>
-          <button id='submitBtn' disabled={disabled}>Place Order</button>
+          <button id='order-button' disabled={disabled}>Add to Order</button>
         </form>
       </div>
     </section>
