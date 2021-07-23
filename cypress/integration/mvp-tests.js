@@ -43,7 +43,7 @@ describe('Cypress MVP Tests', () => {
   it('Can submit the form', () => {
     // Fill out form information
     sizeInput()
-      .select('extra-large')
+      .select('Extra-Large')
     toppingsInput()
       .check()
     nameInput()
@@ -58,12 +58,6 @@ describe('Cypress MVP Tests', () => {
     // Submit form
     submitBtn()
       .click()
-
-    // Test form reset
-    // sizeInput().should('have.value', '')
-    // toppingsInput().should('have.value', '')
-    // nameInput().should('have.value', '')
-    // specialInput().should('have.value', '')
   })
   
 })

@@ -7,8 +7,6 @@ import Header from './components/Header.js'
 import Hero from './components/Hero'
 // Import Order Form Component
 import Form from './components/Form'
-// Import New Order Component
-import NewOrder from './components/NewOrder'
 // Import Schema
 import schema from './validation/formSchema'
 // Import Yup
@@ -52,8 +50,8 @@ export default function App () {
   const postNewOrder = newOrder => {
     axios.post('https://reqres.in/api/orders', newOrder)
       .then(res => {
-        console.log(res)
         setOrders([res.data, ...orders])
+        console.log(newOrder)
       })
       .catch(err => {
         console.log(err)
@@ -112,13 +110,14 @@ export default function App () {
             errors={formErrors}
           />
 
-          {
+          {/* Ran out of time to style/figure this portion out */}
+          {/* {
             orders.map(order => {
               return (
                 <NewOrder key={order.id} details={order} />
               )
             })
-          }        
+          }         */}
         </Route>
         <Route path='/'>
           <Hero />
