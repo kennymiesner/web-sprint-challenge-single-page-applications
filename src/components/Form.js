@@ -9,10 +9,11 @@ export default function Form() {
         <div className='featured-image'></div>
         <label>Choice of Size<br/>
           <select id='size-dropdown'>
-            <option>Small (9")</option>
-            <option>Medium (12")</option>
-            <option>Large (14")</option>
-            <option>Extra Large (16")</option>
+            <option value=''>--Select Size--</option>
+            <option value='small'>Small (9")</option>
+            <option value='medium'>Medium (12")</option>
+            <option value='large'>Large (14")</option>
+            <option value='extra-large'>Extra Large (16")</option>
           </select>
         </label>
         <fieldset>
@@ -57,8 +58,8 @@ export default function Form() {
         <label>Special Instructions<br/>
           <input 
             type='text'
-            id='special-text'
-            name='special-text'
+            id='special-input'
+            name='special-input'
           />
         </label>
         <input 
