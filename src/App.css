@@ -51,21 +51,24 @@ h1 {
 
 /* --- Order Form Component --- */
 
-#form-container {
+#form-wrapper {
   padding: 100px 50px;
   background: #EE3A43;
 }
-#pizza-form {
+#form-wrapper .container {
   max-width: 1024px;
   margin: 0 auto;
   border-radius: 10px;
   background: #fff;
-  text-align: center;
 }
-#pizza-form h1 {
+#pizza-form {
+  padding: 35px;
+}
+#form-wrapper h1 {
   color: initial;
   padding: 35px;
   margin-bottom: 0;
+  text-align: center;
 }
 .featured-image {
   height: 300px;
@@ -75,7 +78,10 @@ h1 {
 #pizza-form legend {
   font-size: 24px;
   font-weight: 700;
+  margin-bottom: 10px;
+  padding-top: 25px;
 }
 #pizza-form input[type=submit] {
-  margin: 35px;
+  display: block;
+  margin: 35px auto 0px auto;
 }
