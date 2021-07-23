@@ -40,10 +40,10 @@ export default function Form(props) {
                 id='size-dropdown'
               >
                 <option value=''>--Select Size--</option>
-                <option value='small'>Small (9")</option>
-                <option value='medium'>Medium (12")</option>
-                <option value='large'>Large (14")</option>
-                <option value='extra-large'>Extra Large (16")</option>
+                <option value='Small'>Small (9")</option>
+                <option value='Medium'>Medium (12")</option>
+                <option value='Large'>Large (14")</option>
+                <option value='Extra-Large'>Extra Large (16")</option>
               </select>
             </label>
           </fieldset>

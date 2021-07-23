@@ -21,16 +21,18 @@ import './App.css'
 
 const initialFormValues = {
   name: '',
-  special: '',
   size: '',
   pepperoni: false,
   sausage: false,
   bacon: false,
   onion: false,
+  special: '',
 }
 
 const initialFormErrors = {
   name: '',
+  size: '',
+  special: '',
 }
 
 const initialOrders = []
@@ -50,6 +52,7 @@ export default function App () {
   const postNewOrder = newOrder => {
     axios.post('https://reqres.in/api/orders', newOrder)
       .then(res => {
+        console.log(res)
         setOrders([res.data, ...orders])
       })
       .catch(err => {
@@ -64,7 +67,7 @@ export default function App () {
     reach(schema, name)
       .validate(value)
       .then(() => setFormErrors({ ...formErrors, [name]: '' }))
-      .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0]}))
+      .catch(err => setFormErrors({ ...formErrors, [name]: err.errors}))
   }
 
   // Event Handlers
@@ -73,13 +76,18 @@ export default function App () {
     validate(name, value)
     setFormValues({
       ...formValues,
-      [name]: value 
+      [name]: value, 
     })
   }
 
   const formSubmit = () => {
     const newOrder = {
       name: formValues.name.trim(),
+      size: formValues.size.trim(),
+      pepperoni: formValues.pepperoni,
+      sausage: formValues.sausage,
+      bacon: formValues.bacon,
+      onion: formValues.onion,
       special: formValues.special.trim(),
     }
     postNewOrder(newOrder)
