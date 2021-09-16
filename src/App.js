@@ -109,15 +109,6 @@ export default function App () {
             disabled={disabled}
             errors={formErrors}
           />
-
-          {/* Ran out of time to style/figure this portion out */}
-          {/* {
-            orders.map(order => {
-              return (
-                <NewOrder key={order.id} details={order} />
-              )
-            })
-          }         */}
         </Route>
         <Route path='/'>
           <Hero />
