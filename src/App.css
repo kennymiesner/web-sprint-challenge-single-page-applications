@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
-}
+/* --- Nav Component --- */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 50px;
+  border-bottom: 1px solid #ddd;
+}
+header button {
+  font-size: 20px;
+  text-decoration: none;
+  color: initial;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+header a:not(:last-child) {
+  margin-right: 30px;
+}
+header #logo {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+/* --- Hero Component --- */
+
+#hero {
+  height: calc(100vh - 106px);
+  padding: 0 50px;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1564128442383-9201fcc740eb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2002&q=80') no-repeat center;
+  background-size: cover;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+}
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  color: #fff;
+}
+#hero button,
+#pizza-form button {
+  font-size: 20px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 1px solid #EE3A43;
+  background: #EE3A43;
+  color: #fff;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+/* --- Order Form Component --- */
+
+#form-wrapper {
+  padding: 100px 50px;
+  background: #EE3A43;
+}
+#form-wrapper .container {
+  max-width: 768px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: #fff;
+}
+#pizza-form {
+  padding: 35px;
+}
+#form-wrapper h1 {
+  color: initial;
+  padding: 35px;
+  margin-bottom: 0;
+  text-align: center;
+}
+.featured-image {
+  height: 300px;
+  background: url('https://images.unsplash.com/photo-1598023696416-0193a0bcd302?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2007&q=80') no-repeat center;
+  background-size: cover;
+}
+#pizza-form legend {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-top: 25px;
+}
+#pizza-form button {
+  display: block;
+  margin: 35px auto 0px auto;
+}
+#pizza-form button:disabled,
+#pizza-form button[disabled] {
+  background: #ccc;
+  cursor: not-allowed;
+  pointer-events: all;
+  border: 1px solid #ccc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* --- Errors --- */
+.errors {
+  color: #EE3A43;
+  font-weight: 700;
 }
